@@ -12,11 +12,11 @@
 
 
 
-let form = document.getElementById('preferences-form');
-let nameId = document.getElementById('name');
-let greeting = document.getElementById('greeting');
-let background = document.getElementById('background-color');
-let font = document.getElementById('foreground-color');
+let form = document.getElementById('preferences-form'); // retrieves the info from the form */
+let nameId = document.getElementById('name'); // Selects the section to retrieve the name info */
+let greeting = document.getElementById('greeting'); // Chooses the greeting */
+let background = document.getElementById('background-color'); //section for the background-color */
+let font = document.getElementById('foreground-color'); // this picks the font */
 
 
 
@@ -38,3 +38,16 @@ function preferences(){
 }
 
 preferences();
+
+
+form.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    localStorage.setItem('name', nameId.value);
+    localStorage.setItem('background-color', background.value);
+    localStorage.setItem('foreground-color', font.value);
+
+
+
+    preferences();
+    alert(' Got it 👍!')
+})
