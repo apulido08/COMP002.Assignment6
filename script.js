@@ -23,5 +23,18 @@ let font = document.getElementById('foreground-color');
 
 function preferences(){
     let myName = localStorage.getItem('name');
-    
+    if(myName){
+        greeting.textContent = `Hi ${myName}👋!`;
+    }
+    let background = localStorage.getItem('background-color');
+    if (background){document.body.style.backgroundColor = background;
+
+    }
+    let font = localStorage.getItem('foreground-color');
+    if (font){document.body.style.color = font;
+
+    }
+
 }
+
+preferences();
