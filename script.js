@@ -21,33 +21,33 @@ let font = document.getElementById('foreground-color'); // this picks the font *
 
 
 
-function preferences(){
-    let myName = localStorage.getItem('name');
-    if(myName){
+function preferences(){ // function to retrieve the saved info from local storage */
+    let myName = localStorage.getItem('name'); // pulls the saved name */
+    if(myName){ // Name is entered and greeting is picked */
         greeting.textContent = `Hi ${myName}👋!`;
     }
-    let background = localStorage.getItem('background-color');
-    if (background){document.body.style.backgroundColor = background;
+    let background = localStorage.getItem('background-color'); // pulls color from local storage */
+    if (background){document.body.style.backgroundColor = background; // retrieves the color */
 
     }
-    let font = localStorage.getItem('foreground-color');
+    let font = localStorage.getItem('foreground-color'); // adds color and font from the local storage */
     if (font){document.body.style.color = font;
 
     }
 
 }
 
-preferences();
+preferences(); // applies the preferences */
 
 
-form.addEventListener('submit', (event)=>{
-    event.preventDefault();
-    localStorage.setItem('name', nameId.value);
-    localStorage.setItem('background-color', background.value);
-    localStorage.setItem('foreground-color', font.value);
+form.addEventListener('submit', (event)=>{ // event listener once the submit button is clicked */
+    event.preventDefault(); // stops the default action */
+    localStorage.setItem('name', nameId.value); // saves the name information */
+    localStorage.setItem('background-color', background.value); // saves the background color */
+    localStorage.setItem('foreground-color', font.value); // saves the font on reload of page */
 
 
 
-    preferences();
-    alert(' Got it 👍!')
+    preferences(); // calls the function again */
+    alert(' Got it 👍!') // once button is clicked message pops up */
 })
