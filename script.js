@@ -9,3 +9,19 @@
 // also want to call this function again when the user saves their preferences to
 // immediately apply them. Make sure you also notify the user somehow that the preferences
 // were saved.
+
+
+
+let form = document.getElementById('preferences-form');
+let nameId = document.getElementById('name');
+let greeting = document.getElementById('greeting');
+let background = document.getElementById('background-color');
+let font = document.getElementById('foreground-color');
+
+
+
+
+function preferences(){
+    let myName = localStorage.getItem('name');
+    
+}
